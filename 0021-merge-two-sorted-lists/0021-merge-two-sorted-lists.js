@@ -11,29 +11,30 @@
  * @return {ListNode}
  */
 
- class LinkedList {
-    constructor() {
-        this.head = null;
-        this.length = 0;
-        this.tail = null;
-    }
-    push(val) {
-        const newNode = new ListNode(val)
-        if(!this.length) {
-            this.head = newNode
-            this.tail = newNode
-            this.length++;
-        } else {
-            this.tail.next = newNode;
-            this.tail = newNode;
-            this.length++;
-        }
-        return this;
-    }
- }
-
+ 
 
 const mergeTwoLists = function(list1, list2) {
+    class LinkedList{
+        constructor() {
+            this.head = null;
+            this.tail = null;
+            this.length = 0;
+        }
+        push(val) {
+            const newNode = new ListNode(val)
+            if(!this.length){
+                this.head = newNode;
+                this.tail = newNode;
+                this.length++;
+            } else {
+                this.tail.next = newNode;
+                this.tail = newNode;
+                this.length++;
+            }
+        }
+    }
+
+
     const result = new LinkedList();
     while(list1 && list2) {
         if(list1.val <= list2.val) {
