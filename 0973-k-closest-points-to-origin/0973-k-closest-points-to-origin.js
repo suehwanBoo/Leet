@@ -51,7 +51,7 @@ var kClosest = function(points, k) {
         const store = this.store
         let pointer = 0;
         let child = this.getChild(pointer);
-        while(child && store[pointer][2] > store[child][2]) {
+        while(child && store[pointer][2] < store[child][2]) {
             [store[child], store[pointer]] = [store[pointer], store[child]];
             pointer = child;
             child = this.getChild(child);
