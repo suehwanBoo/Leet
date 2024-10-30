@@ -13,7 +13,7 @@
 var isBalanced = function(root) {
     let result = true;
     function count(node=root, cnt = 0) {
-        if(!node) return cnt;
+        if(!node || !result) return cnt;
         const leftCnt = count(node.left, cnt + 1)
         const rightCnt = count(node.right, cnt + 1)
         if(Math.abs(leftCnt - rightCnt) > 1) result = false;
