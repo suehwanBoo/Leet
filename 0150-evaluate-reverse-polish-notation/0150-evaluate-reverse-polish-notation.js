@@ -13,7 +13,7 @@ var evalRPN = function(tokens) {
             if(token === "+") saveNum.push(firstNum + secondNum);
             else if(token === "-") saveNum.push(firstNum - secondNum);
             else if(token === "*") saveNum.push(firstNum * secondNum);
-            else saveNum.push(Math.floor(firstNum / secondNum));
+            else saveNum.push(Math.trunc(firstNum / secondNum));
         }
         console.log(saveNum)
     }
