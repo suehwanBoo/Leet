@@ -5,6 +5,8 @@
 var sortColors = function(nums) {
     function quickSort(left=0, right=nums.length - 1) {
         if(left >= right) return;
+        const pivot = Math.floor(Math.random() * (right - left + 1)) + left;
+        [nums[left],nums[pivot]] = [nums[pivot], nums[left]]
         const sortedIdx = sort(left, right);
         quickSort(left, sortedIdx - 1);
         quickSort(sortedIdx + 1, right);
