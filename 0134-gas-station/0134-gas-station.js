@@ -31,5 +31,5 @@ var canCompleteCircuit = function(gas, cost) {
         } while(j !== i)
         if(flag) return i;
     }
-    return -1;
+    return gas.length === 1 && gas[0] === cost[0] ? 0 : -1;
 };
