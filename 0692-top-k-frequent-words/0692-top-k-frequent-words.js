@@ -29,7 +29,6 @@ class HeapQ {
         let pointer = this.store.length - 1;
         let parent = this.getParent(pointer);
         while(parent >= 0) {
-            console.log(store[pointer][1], store[parent][1])
             if(store[pointer][1] > store[parent][1] || (store[pointer][1] === store[parent][1] && store[pointer][0] < store[parent][0])) {
                 [store[parent],store[pointer]] = [store[pointer], store[parent]];
                 pointer = parent;
