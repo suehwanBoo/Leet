@@ -25,7 +25,7 @@ var oddEvenList = function(head) {
             evenPointer = evenPointer.next;
         }
     }
-    if(evenPointer) evenPointer.next = null;
-    if(oddPointer) oddPointer.next = evenHead;
+    if(evenPointer)evenPointer.next = null;
+    oddPointer.next = evenHead;
     return result;
 };
