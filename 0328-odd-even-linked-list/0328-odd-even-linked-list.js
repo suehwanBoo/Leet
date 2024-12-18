@@ -10,6 +10,7 @@
  * @return {ListNode}
  */
 var oddEvenList = function(head) {
+    if(head === null) return null;
     const result = head;
     const evenHead = head?.next;
     let oddPointer = head;
