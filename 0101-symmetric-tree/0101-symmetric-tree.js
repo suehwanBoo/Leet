@@ -13,27 +13,11 @@
 var isSymmetric = function(root) {
     if(!root.left && !root.right) return true;
     if(!root.left || !root.right) return false;
-    let arrLeft = [], arrRight = [];
-    function search(node, isLeft) {
-        const target = isLeft ? arrLeft : arrRight;
-        if(node === null) {
-            target.push(null)
-            return;
-        }
-        target.push(node.val);
-        if(isLeft) {
-            search(node.left, isLeft);
-            search(node.right, isLeft);
-        } else {
-            search(node.right, isLeft);
-            search(node.left, isLeft);
-        }
+    function search(left, right) {
+        if(!left && !right) return true;
+        if(!left || !right) return false;
+        if(left.val === right.val) return search(left.left, right.right) && search(left.right, right.left);
+        else return false;
     }
-    search(root.left, true);
-    search(root.right, false);
-    if(arrLeft.length !== arrRight.length) return false;
-    for(let i = 0; i < arrLeft.length; i++) {
-        if(arrLeft[i] !== arrRight[i]) return false;
-    }
-    return true;
+    return search(root.left, root.right);
 };
